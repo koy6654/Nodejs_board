@@ -1,0 +1,23 @@
+{% extends 'layout.njk' %}
+{% block contents %}
+  <section>
+    <div class='main-header'>
+      <h1>{{board.title}}</h1>
+      <div>
+        <a href=""
+          class="btn btn-outline-success">
+          글 수정
+        </a>
+        <a href=""
+          class="btn btn-outline-danger">
+          글 삭제
+        </a>
+      </div>
+    </div>
+    <hr />
+    <div class="main-content">
+      {{board.content}}
+    </div>
+
+  </section>
+{% endblock contents %}

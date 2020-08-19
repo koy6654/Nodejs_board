@@ -1,0 +1,39 @@
+{% extends 'layout.njk' %}
+{% block contents %}
+  <section>
+    <br><br><br>
+        <div class='main-header'>
+          <h1>게시글 리스트</h1>
+          <br>
+          <a href="board/write"
+            class="btn btn-outline-primary">
+            글 작성
+          </a>
+        </div>
+
+        <hr />
+        <div class="board-list-wrap">
+          <br>
+          <ul class="list-group">
+              {% for board in boardList %}
+                  <li>
+                      <a href="/board/{{board.id}}"
+                      class="list-group-item list-group-item-action">
+                      <div
+                          class="d-flex w-100 justify-content-between">
+                          <h5 class="mb-1">{{board.title}}</h5>
+                          <small
+                          class="text-muted">{{board.createAt}}</small>
+                      </div>
+                      <p class="mb-1">
+                          {{board.content}}
+                      </p>
+                      <small
+                          class="text-muted">{{board.author}}</small>
+                      </a>
+                  </li>
+              {% endfor %}        
+          </ul>
+        </div>
+  </section>
+{% endblock contents %}
